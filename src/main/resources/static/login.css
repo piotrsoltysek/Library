@@ -8,6 +8,7 @@
 
 #login-form input {
     margin: 10px 0;
+    text-align: center;
 
 }
 
@@ -19,4 +20,5 @@
     background-color: #878db7;
     border: 2px solid rgba(62, 71, 181, 0.77);
     border-radius: 10px;
+
 }

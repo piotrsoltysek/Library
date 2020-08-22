@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" xmlns:th="http://www.w3.org/1999/xhtml">
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <title>Księgarnia</title>
     <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
@@ -11,8 +11,14 @@
     <form id="login-form" method="POST" th:object="${user}">
         <input type="text" placeholder="login" th:field="*{login}"><br>
         <input type="password" placeholder="hasło" th:field="*{password}"><br>
-        <input type="submit" value="OK">
+        <input type="submit" value="OK"><br>
+        <a href="/register">Zarejestruj</a>
     </form>
+
+
+
 </div>
+
+
 </body>
 </html>

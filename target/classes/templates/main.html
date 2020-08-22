@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Main</title>
+    <title>Księgarnia</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<p>Main page</p>
+
+<div id="logo">
+
+</div>
+
+<div id="user-menu">
+    <a href="/basket" id="basket-button"></a>
+    <th:block th:if="${!isLogged}">
+        <a href="/login" id="login-button"></a>
+    </th:block>
+
+    <th:block th:if="${isLogged}">
+        <a href="/logout" id="login-button"></a>
+    </th:block>
+</div>
+
+<div id="finder">
+    <form method="POST" action="/find">
+        <input type="text" placeholder="Szukaj">
+        <input type="submit" value="Szukaj">
+    </form>
+
+</div>
+
+<div id="menu">
+    <a href="/cooking">Gotowanie</a>
+    <a href="/baking">Pieczenie</a>
+</div>
+
+<div id="content">
+    <th:block th:each="currentBook : ${books}">
+        <div class="book">
+            <div class="title">
+                <div class="label">Tytuł</div>
+                <div class="value" th:text="${currentBook.title}"></div>
+            </div>
+
+            <div class="isbn">
+                <div class="label">ISBM</div>
+                <div class="value" th:text="${currentBook.isbn}"></div>
+            </div>
+
+            <div class="author">
+                <div class="label">Autor:</div>
+                <div class="value">
+                    <div class="author-name" th:text="${currentBook.author.name}"></div>
+                    <div class="author-surname" th:text="${currentBook.author.surname}"></div>
+                </div>
+
+            </div>
+        </div>
+    </th:block>
+</div>
+
 </body>
 </html>

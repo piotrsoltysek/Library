@@ -30,6 +30,18 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void addUser(User user) {
-        userDAO.addUser(user);
+        this.userDAO.addUser(user);
+    }
+
+    @Override
+    public boolean registerUser(User user, String repeatedPassword) {
+        if (!user.getPassword().equals(repeatedPassword)) {
+            return false;
+        }
+
+        user.setPassword(DigestUtils.md5Hex(user.getPassword()));
+
+        this.userDAO.addUser(user);
+        return true;
     }
 }
