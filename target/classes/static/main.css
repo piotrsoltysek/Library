@@ -7,6 +7,7 @@
     background-size: contain;
     background-image: url("logo.png");
     background-repeat: no-repeat;
+    margin: 5px;
 }
 
 #user-menu {
@@ -25,6 +26,7 @@
     background-image: url("basket.png");
     background-repeat: no-repeat;
     float: right;
+    margin: 5px;
 }
 
 #login-button {
@@ -35,7 +37,21 @@
     background-image: url("login-button.png");
     background-repeat: no-repeat;
     float: right;
+    margin: 5px;
 }
+
+#logout-button {
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    background-size: contain;
+    background-image: url("logout.jpg");
+    background-repeat: no-repeat;
+    float: right;
+    margin: 5px;
+}
+
+
 
 #finder {
     position: absolute;

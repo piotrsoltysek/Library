@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <title>Księgarnia</title>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 
 
 
 </head>
 <body>
 
-
-<div class="container">
+<div th:replace="szablon.html :: logo"></div>
+<div th:replace="szablon.html :: userMenu"></div>
+<div th:replace="szablon.html :: finderBar"></div>
+<div th:replace="szablon.html :: menu"></div>
 
     <form id="login-form" method="POST" th:object="${user}">
         <input type="text" placeholder="login" th:field="*{login}"><br>
@@ -19,11 +22,6 @@
         <input type="submit" value="OK"><br>
         <a href="/register">Zarejestruj</a>
     </form>
-
-
-
-</div>
-
 
 </body>
 </html>
