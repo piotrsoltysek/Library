@@ -1,6 +1,7 @@
 package pl.camp.it.library.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity(name = "tbook")
 public class Book {
@@ -13,6 +14,8 @@ public class Book {
     private Author author;
     @Column(nullable = false, unique = true, length = 20)
     private String isbn;
+    @Enumerated(EnumType.STRING)
+    private Category category;
 
     public int getId() {
         return id;
@@ -44,5 +47,43 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author=" + author +
+                ", isbn='" + isbn + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Book) {
+            Book b = (Book) o;
+            return b.id == this.id;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
+    }
+
+
+    public enum Category {
+        COOKING,
+        BAKING
     }
 }

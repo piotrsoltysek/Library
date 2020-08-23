@@ -35,46 +35,44 @@ public class AdminController {
         Book book1 = new Book();
         book1.setIsbn("978-83-8168-518-4");
         book1.setTitle("Kod otyłości");
-
         Author author1 = new Author();
         author1.setName("Jason");
         author1.setSurname("Fung");
         book1.setAuthor(author1);
+        book1.setCategory(Book.Category.COOKING);
 
         Book book2 = new Book();
         book2.setIsbn("978-83-8151-243-5");
         book2.setTitle("Domowe kiszonki które leczą");
-
         Author author2 = new Author();
         author2.setName("Magdalena");
         author2.setSurname("Jarzynka-Jendrzejewska");
         book2.setAuthor(author2);
+        book2.setCategory(Book.Category.COOKING);
 
         Book book3 = new Book();
         book3.setIsbn("978-83-8151-000-5");
         book3.setTitle("Pieczywo domowe");
-
         Author author3 = new Author();
         author3.setName("Elżbieta");
         author3.setSurname("Kiewnarska ");
         book3.setAuthor(author3);
+        book3.setCategory(Book.Category.BAKING);
 
         Book book4 = new Book();
         book4.setIsbn("978-83-8151-151-3");
-        book4.setTitle("Pieczenie");
-
+        book4.setTitle("Pieczenie na 100 sposobów");
         book4.setAuthor(author2);
-
+        book4.setCategory(Book.Category.BAKING);
 
         Book book5 = new Book();
         book5.setIsbn("000-83-8168-518-4");
         book5.setTitle("Ciasta wielkanocne");
-
         Author author5 = new Author();
         author5.setName("Siostra");
         author5.setSurname("Anastazja");
         book5.setAuthor(author5);
-
+        book5.setCategory(Book.Category.BAKING);
 
 
         this.bookService.addBook(book1);

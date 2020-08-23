@@ -7,33 +7,11 @@
 </head>
 <body>
 
-<div id="logo">
+<div th:replace="szablon.html :: logo"></div>
+<div th:replace="szablon.html :: userMenu"></div>
+<div th:replace="szablon.html :: finderBar"></div>
+<div th:replace="szablon.html :: menu"></div>
 
-</div>
-
-<div id="user-menu">
-    <a href="/basket" id="basket-button"></a>
-    <th:block th:if="${!isLogged}">
-        <a href="/login" id="login-button"></a>
-    </th:block>
-
-    <th:block th:if="${isLogged}">
-        <a href="/logout" id="login-button"></a>
-    </th:block>
-</div>
-
-<div id="finder">
-    <form method="POST" action="/find">
-        <input type="text" placeholder="Szukaj">
-        <input type="submit" value="Szukaj">
-    </form>
-
-</div>
-
-<div id="menu">
-    <a href="/cooking">Gotowanie</a>
-    <a href="/baking">Pieczenie</a>
-</div>
 
 <div id="content">
     <th:block th:each="currentBook : ${books}">
@@ -56,6 +34,7 @@
                 </div>
 
             </div>
+            <a th:href="@{/addToBasket/{id}(id=${currentBook.id})}">Do koszyka</a>
         </div>
     </th:block>
 </div>
