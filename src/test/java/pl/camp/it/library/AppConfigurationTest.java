@@ -36,7 +36,7 @@ public class AppConfigurationTest {
     }
     */
 
-    @Bean
+/*    @Bean
     public IUserDAO userDAO() {
         return Mockito.mock(IUserDAO.class);
     }
@@ -49,7 +49,7 @@ public class AppConfigurationTest {
     @Bean
     public IAuthorDAO authorDAO() {
         return Mockito.mock(IAuthorDAO.class);
-    }
+    }*/
 
     @Bean
     @SessionScope

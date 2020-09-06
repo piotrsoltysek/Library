@@ -33,7 +33,7 @@ public class BookServiceImpl implements IBookService {
 
     @Override
     public List<Book> findBooks(String pattern) {
-        Set<Book> result = new HashSet<Book>();
+        Set<Book> result = new HashSet<>();
         List<Book> books = this.bookDAO.findBooks(pattern);
 
         result.addAll(books);
