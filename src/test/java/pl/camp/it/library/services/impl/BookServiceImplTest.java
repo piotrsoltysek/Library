@@ -74,7 +74,5 @@ public class BookServiceImplTest {
         verify(this.bookDAO, times(1)).findBooks(anyString());
         verify(this.authorDAO, times(1)).findAuthors(anyString());
         verify(this.bookDAO, times(2)).getBooksByAuthorId(anyInt());
-
-
     }
 }
